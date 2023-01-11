@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: db-deployment
   namespace: hebomah
   labels:
-    app: app
+    app: db
 spec:
   replicas: 1
   strategy:
@@ -12,17 +12,17 @@ spec:
   minReadySeconds: 20
   selector:
     matchLabels:
-      app: app
+      app: db
   template:
     metadata:
       labels:
-        app: app
+        app: db
     spec:
       containers:
       - envFrom:
         - secretRef:
             name: db-secret
-        name: app-deployment
-        image: harbor.dev.afsmtddso.com/henryebomah/app@sha256:cb402287245a4fbea4a98d10e27397d7af5c37432b19df34dca335e245b2b775 
+        name: db-deployment
+        image: harbor.dev.afsmtddso.com/henryebomah/db@sha256:bf8b781180340b62b8cfec48ca7548c2f61f4287e8ea505b9abd3ccf4d3d721e
         ports:
-        - containerPort: 5000
+        - containerPort: 5432
