@@ -23,6 +23,6 @@ spec:
         - secretRef:
             name: db-secret
         name: app-deployment
-        image: harbor.dev.afsmtddso.com/henryebomah/app@sha256:cb402287245a4fbea4a98d10e27397d7af5c37432b19df34dca335e245b2b775 
+        image: harbor.dev.afsmtddso.com/henryebomah/app@sha256:cb402287245a4fbea4a98d10e27397d7af5c37432b19df34dca335e245b2b775
         ports:
         - containerPort: 5000

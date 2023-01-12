@@ -1,4 +1,4 @@
---
+-- Testing deployment
 -- PostgreSQL database dump
 --
 
